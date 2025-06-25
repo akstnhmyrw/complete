@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>電卓</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #e0f7fa;
+      margin: 0;
+      position: relative;
+    }
+    #message {
+      font-size: 28px;
+      color: #006064;
+      background: #ffffff;
+      padding: 30px 50px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+    #message:hover {
+      background-color: #b2ebf2;
+      transform: scale(1.05);
+    }
+    #hidden-button {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background-color: #00796b;
+      color: rgb(255, 255, 255);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    body:hover #hidden-button {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="message">こんにちは！このページは特に何もありません！</div>
+  <button id="hidden-button" onclick="location.href='shooting.html'">おすすめ計算サイト一覧</button>
+
+</body>
+</html>

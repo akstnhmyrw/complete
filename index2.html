@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>シューティングゲーム改良版</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="startMessage">
+    <h2>ゲームの遊び方</h2>
+    <p>制限時間<span style="color:#0ff;">90秒</span>以内にスコア900点を目指せ！</p>
+    <p>敵の種類：</p>
+    <ul>
+      <li><span style="color:red;">赤敵</span>：1発で倒せる（10点）</li>
+      <li><span style="color:blue;">青敵</span>：4発で倒せる（30点）</li>
+      <li><span style="color:gold;">金敵</span>：10発で倒せる（80点）即死</li>
+      <li><span style="color:magenta;">虹敵</span>：20発で倒せる（600点）即死</li>
+      <li><span style="color:orange;">ボス</span>：30発で倒せる（300点）全パワーアップ（10秒間）</li>
+    </ul>
+    <p>赤敵: 10% / 青敵: 50% / 金・虹: 100% でパワーアップをドロップ！</p>
+    <p>ボスは600点以上で登場！</p>
+    <button onclick="startGame()">ゲームスタート</button>
+  </div>
+
+  <button id="backButton" onclick="location.href='index.html'">戻る</button>
+  <div id="scoreDisplay">スコア: 0</div>
+  <div id="timerDisplay">時間: 90</div>
+  <div id="lifeDisplay">ライフ: 5</div>
+  <div id="powerupDisplay">パワーアップ: なし</div>
+
+  <div id="gameClearMessage" style="display:none;"></div>
+
+  <!-- ランキング表示 -->
+  <div id="rankingDisplay" style="display:none; position:absolute; top:70%; left:50%; transform: translateX(-50%);
+      background: rgba(0,0,0,0.8); color:#0ff; padding: 10px 20px; border-radius:10px; max-width:300px; z-index:25;">
+    <h3>ランキング（上位5）</h3>
+    <ol id="rankingList" style="padding-left: 20px; text-align:left;"></ol>
+  </div>
+
+  <!-- スマホ用仮想ボタン -->
+  <div id="touchControls" style="display:none; position: fixed; bottom: 20px; right: 20px; z-index: 30; user-select:none;">
+    <button id="btnLeft" style="width:60px; height:60px; margin-right:10px; font-size: 24px;">◀</button>
+    <button id="btnRight" style="width:60px; height:60px; margin-right:10px; font-size: 24px;">▶</button>
+    <button id="btnShoot" style="width:60px; height:60px; background:#0ff; color:#111; border:none; border-radius:8px; font-size: 20px;">射撃</button>
+  </div>
+
+  <canvas id="gameCanvas"></canvas>
+
+  <script src="game.js"></script>
+</body>
+</html>

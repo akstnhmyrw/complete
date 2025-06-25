@@ -1,0 +1,44 @@
+html, body {
+  margin:0; padding:0; overflow:hidden; background:#111;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #eee; user-select:none;
+}
+canvas {
+  display:block;
+  background: linear-gradient(to bottom, #0b0b0b, #1a1a1a);
+}
+#startMessage, #gameClearMessage {
+  position: absolute; top:50%; left:50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.85); padding: 30px 40px;
+  border-radius: 12px; box-shadow: 0 0 15px #0ff;
+  text-align: center; z-index: 20;
+}
+#startMessage h2 { margin-top:0; font-size: 28px; color: #0ff; }
+#startMessage ul {
+  text-align: left; margin: 10px 0 20px 20px;
+  color: #ccc; font-size: 16px;
+}
+#startMessage button {
+  font-size: 18px; background: #0ff; border: none;
+  padding: 12px 24px; border-radius: 8px;
+  cursor: pointer; color: #111; font-weight: bold;
+  transition: background 0.3s ease;
+}
+#startMessage button:hover { background: #0aa; }
+#backButton, #scoreDisplay, #timerDisplay, #lifeDisplay, #powerupDisplay {
+  position: absolute; background: rgba(0,0,0,0.6);
+  color: #0ff; font-weight: bold; padding: 8px 15px;
+  border-radius: 8px; user-select:none;
+  font-size: 16px; z-index: 15;
+}
+#backButton {
+  top: 20px; left: 20px; cursor: pointer;
+  background: #222; color: #0ff; border: 2px solid #0ff;
+}
+#scoreDisplay { top: 20px; right: 260px; }
+#timerDisplay { top: 20px; right: 180px; }
+#lifeDisplay { top: 20px; right: 100px; }
+#powerupDisplay {
+  top: 60px; right: 20px; width: 140px;
+}
